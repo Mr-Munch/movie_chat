@@ -1,0 +1,46 @@
+
+
+
+	<% movie.chats.each do |chat| %>
+		<% if chat.user_id == current_user.id %>
+			<div class="comment clearfix">
+				<div class="chat-user-image">
+					<% if chat.user.image_id.present? %>
+						<%= attachment_image_tag chat.user, :image, :size => '70x70' %>
+					<% else %>
+						<%= image_tag "image/no-image.png", :size => '70x70' %>
+					<% end %>
+				</div>
+
+				<p class="box"><%= chat.comment %></p>
+				<p class="time"><%= chat.created_at.strftime('%X') %>
+
+					<% if chat.user_id == current_user.id %>
+						<%= link_to movie_chat_path(chat.movie_id, chat.id), method: :delete, remote: true do %>
+							<span class="glyphicon glyphicon-remove-circle" aria-hidden="true">削除</span>
+						<% end %>
+					<% end %>
+				</p>
+			</div>
+		<% else %>
+			<div class="other-comment clearfix">
+				<div class="chat-user-image">
+					<% if chat.user.image_id.present? %>
+						<%= attachment_image_tag chat.user, :image, :size => '70x70' %>
+					<% else %>
+						<%= image_tag "image/no-image.png", :size => '70x70' %>
+					<% end %>
+				</div>
+
+				<p class="box"><%= chat.comment %></p>
+				<p class="time"><%= chat.created_at.strftime('%X') %>
+
+					<% if chat.user_id == current_user.id %>
+						<%= link_to movie_chat_path(chat.movie_id, chat.id), method: :delete, remote: true do %>
+							<span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+						<% end %>
+					<% end %>
+				</p>
+			</div>
+		<% end %>
+	<% end %>

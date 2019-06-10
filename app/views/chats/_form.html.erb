@@ -1,0 +1,10 @@
+
+
+<%= form_with(model: [ movie, Chat.new ]) do |f| %>
+	<div class="input-group input-group-lg">
+		<%= f.text_area :comment, class: "form-control", rows:'1', cols:'10', wrap:'hard', placeholder: "コメントしよう", required: true %>
+		<span class="input-group-btn">
+			<%= f.submit "chat", class: "btn btn-info" %>
+		</span>
+	</div>
+<% end %>

@@ -1,0 +1,23 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#slick {
+	width: 70%;
+	margin: 0 auto;
+
+	.slide1 {
+		height:300px;
+		background-image: url(image/movie1.jpg);
+		background-position: top;
+		background-size: cover;
+	}
+	.slide2 {
+		height: 300px;
+		background-color: blue;
+	}
+	.slide3 {
+		height: 300px;
+		background-color: black;
+	}
+}

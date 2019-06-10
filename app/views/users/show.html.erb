@@ -1,0 +1,40 @@
+<div class="black-image">
+	<div class="container">
+        <div class="row">
+          	<div class="col-lg-0"></div>
+          	<div class="col-lg-12">
+				<h2>ユーザ情報を更新しよう</h2>
+				<div class="user-profile">
+					<%= form_for(@user) do |f| %>
+						<% if @user.errors.any? %>
+							<%= @user.errors.count %>件のエラーが発生しました
+							<% @user.errors.full_messages.each do |message| %>
+								<%= message %>
+							<% end %>
+						<% end %>
+
+						<div class="user-image">
+							<h2><%= @user.name %></h2>
+							<% if @user.image_id.present? %>
+								<%= attachment_image_tag @user, :image, :size => "300x300" %>
+							<% else %>
+								<%= image_tag "image/no-image.png", :size => "300x300" %>
+							<% end %>
+							<div class="user-taste">
+								<p><span>お気に入り映画</span><br><%= @user.taste %></p>
+							</div>
+						</div>
+						<div class="profile-update">
+						<p>Image</p>
+						<%= f.attachment_field :image, placeholder: "プロフィール画像" %>
+						<p>Name</p>
+						<%= f.text_field :name, placeholder: " 名前", :style => "color: black;" %>
+						<p>Vest Movie</p>
+						<%= f.text_area :taste, placeholder: " 好きな映画を書こう", :style => "color: black;" %>
+						<%= f.submit "更新する", class: 'btn btn-danger btn-block' %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,46 @@
+<div class="black-image">
+	<div class="container">
+        <div class="row">
+          	<div class="col-lg-0"></div>
+          	<div class="col-lg-12">
+				<h1>Movies</h1>
+				<p>公開中の映画はこちら！！</p>
+				<div class="panel-group" id="accordion">
+					<% @movies.each_with_index do |movie, i| %>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<div class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#accordionCollapse<%= i %>" class="clearfix">
+											<p class="title-link"><%= movie.title %></p>
+											<div>
+											<%= link_to movie_chats_path(movie.id), class: "btn btn-info" do %>
+												<i class="fa fa-comments" aria-hidden="true">コメント</i>
+											<% end %>
+											<%= link_to movie_path(movie.id), class: "btn btn-default" do %>
+												映画の詳細
+											<% end %>
+										</div>
+									</a>
+								</div>
+							</div>
+							<div id="accordionCollapse<%= i %>" class="panel-collapse collapse out">
+								<div class="panel-body">
+									<p>上映開始日 <%= movie.day %></p>
+									<%= link_to  do %>
+										<span class="btn btn-success small-botton"><%= movie.country %></span>
+									<% end %>
+									<%= link_to  do %>
+										<span class="btn btn-warning small-botton"><%= movie.category %></span>
+									<% end %>
+									<br><br>
+									<p>内容<br><%= movie.caption %></p>
+								</div>
+							</div>
+						</div>
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

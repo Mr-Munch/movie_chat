@@ -1,0 +1,2 @@
+$('#ajax-comment').html("<%= j(render partial: 'chats/comment', locals: { movie: @movie, chats: @chats }) %>");
+$('textarea#chat_comment.form-control').val('');

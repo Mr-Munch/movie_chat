@@ -1,0 +1,91 @@
+// Place all the styles related to the movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.btn a {
+	color: white;
+}
+.btn a:hover {
+	color: white;
+	text-decoration: none;
+}
+
+p.title-link {
+	a {
+		color: black;
+	}
+	a:hover {
+		color: black;
+	}
+}
+
+.col-lg-12 {
+	#accordion {
+		width: 80%;
+		margin: 10px auto;
+
+		.panel {
+			margin-bottom: 30px;
+
+			.panel-body {
+				background-color: black;
+			}
+		}
+	}
+}
+span.small-botton {
+	padding: 0 5px;
+}
+
+.col-lg-4 {
+	img {
+		width:320px;
+		height: 350px;
+	}
+
+	.authority {
+		color: gray;
+	}
+}
+
+.col-lg-8 {
+	.movie-content {
+
+		p {
+			color: white;
+
+			span {
+				padding: 0 5px;
+			}
+		}
+
+		p.movie-caption {
+			border: 3px solid gray;
+			border-radius: 4px;
+			padding: 20px;
+		}
+	}
+}
+
+.movie-box {
+	position: relative;
+	margin: 40px 0;
+
+
+	.film-image{
+		width: 1000px;
+		margin: 0 auto;
+
+		img {
+			width: 1000px;
+			height: 500px;
+		}
+	}
+
+	.youtube {
+		width: 640px;
+		position: absolute;
+		top: 70px;
+		left: 250px;
+	}
+}

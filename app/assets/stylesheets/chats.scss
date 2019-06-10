@@ -1,0 +1,86 @@
+// Place all the styles related to the chats controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.col-lg-3 {
+	.panel {
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+		margin-top: 70px;
+
+		.panel-heading {
+			background-color: black;
+			color: white;
+		}
+
+		.panel-body {
+			background-color: black;
+			color: white;
+
+			img {
+				width: 230px;
+				height: 230px;
+			}
+		}
+	}
+}
+
+.col-lg-9 {
+	padding-left: 50px;
+
+	.chat-backimage {
+		background: #EEEEEE;
+
+
+		.comments {
+			margin-bottom: 40px;
+			padding: 30px;
+
+			.comment, .other-comment {
+				margin-bottom: 40px;
+
+				.chat-user-image img {
+					border-radius: 50%;
+					margin: 0 20px;
+					float: left;
+				}
+
+				p.box {
+					font-size: 20px;
+					margin-right: 10px;
+					background: #66FFFF;
+					border-bottom: solid 4px #33CCFF;
+					border-right: solid 2px #33CCFF;
+					box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+					border-radius: 10px;
+					padding: 10px;
+					float: left;
+					width: 69%;
+				}
+
+				p.time {
+					padding-left: 280px;
+				}
+			}
+
+			.comment {
+				padding-right:400px;
+			}
+
+			.other-comment {
+				padding-left: 400px;
+
+				p.box {
+					background: #66FF99;
+					border-bottom: solid 4px #00CC66;
+					border-right: solid 2px #00CC66;
+				}
+			}
+		}
+
+		.post-comment {
+			width: 70%;
+			margin: 40px 0 0 20px;
+			padding-bottom: 10px;
+		}
+	}
+}

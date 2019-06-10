@@ -1,0 +1,31 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3">
+        	<%= link_to movie_path(@movie.id) do %>
+	        	<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"><%= @movie.title %></h3>
+					</div>
+					<div class="panel-body">
+			        	<p><%= @movie.day %>上映</p>
+						<p><%= @movie.country %>：<%= @movie.category %></p>
+						<br>
+						<%= render partial: 'movies/photo', locals: { movie: @movie } %>
+					</div>
+				</div>
+			<% end %>
+        </div>
+        <div class="col-lg-9">
+			<h1>ネタバレじゃんじゃん♫<br> 感想を言い合おう！！</h1>
+			<div class="chat-backimage">
+				<div class="comments" id="ajax-comment">
+					<%= render partial: 'chats/comment', locals: { movie: @movie, chats: @chats } %>
+				</div>
+				<div class="post-comment" id="chat-form">
+					<%= render partial: 'chats/form', locals: { movie: @movie, chat: @chat } %>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

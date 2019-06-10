@@ -1,0 +1,32 @@
+<div class="black-image">
+	<div class="container">
+	    <div class="row">
+	       	<div class="col-lg-4">
+	       		<%= render partial: 'movies/photo', locals: { movie: @movie } %>
+	       	</div>
+	       	<div class="col-lg-8">
+	       		<div class="movie-content">
+	       			<h3><%= @movie.title %></h3>
+	       			<p class="movie-caption"><%= @movie.caption %></p>
+	       			<p>上映開始日 <%= @movie.day %></p>
+					<p>国：
+						<%= link_to  do %>
+							<span class="btn btn-success"><%= @movie.country %></span>
+						<% end %>
+					</p>
+					<p>カテゴリー：
+						<%= link_to  do %>
+							<span class="btn btn-warning"><%= @movie.category %></span>
+						<% end %>
+					</p>
+	       		</div>
+	       	</div>
+	    </div>
+	    <div class="movie-box">
+		    <div class="film-image"><%= image_tag "image/film.png" %></div>
+		    <div class="youtube">
+		    	<%= render partial: 'movies/youtube', locals: { movie: @movie } %>
+		    </div>
+		</div>
+	</div>
+</div>

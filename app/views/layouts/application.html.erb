@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MovieChat</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <% if user_signed_in? %>
+        <header class="header1">
+          <h1>Movieee Chat</h1>
+        </header>
+        <nav>
+            <ul>
+              <%= link_to destroy_user_session_path, method: :delete do %>
+                <li>Logout</li>
+              <% end %>
+
+              <%= link_to movies_path do %>
+                <li>Movie</li>
+              <% end %>
+
+              <%= link_to user_path(current_user.id) do %>
+                <li>Mypage</li>
+              <% end %>
+
+              <%= link_to tops_top_path do %>
+                <li>Top</li>
+              <% end %>
+            </ul>
+          </nav>
+      <% else %>
+        <header class="header2">
+        </header>
+      <% end %>
+      <main>
+        <%= yield %>
+      </main>
+      <footer></footer>
+    </div>
+  </body>
+</html>
