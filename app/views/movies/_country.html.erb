@@ -1,0 +1,43 @@
+<h2>country</h2>
+<div class="film-box">
+	<h3>洋画</h3>
+	<% foreign_movies.each do |movie| %>
+		<div class="film-group film clearfix" id="foreign">
+			<%= link_to movie_chats_path(movie.id), class: "film-link" do %>
+				<%= render partial: 'movies/photo', locals: { movie: movie } %>
+			<% end %>
+			<%= link_to movie_chats_path(movie.id), class: "hover-link" do %>
+				<div class="hover-image">
+					<i class="fa fa-comments fa-5x" aria-hidden="true"></i>
+				</div>
+			<% end %>
+			<div class="film-content">
+				<h4><%= movie.title %></h4>
+				<%= link_to movie_path(movie.id), class: "btn btn-default" do %>
+					映画の詳細
+				<% end %>
+			</div>
+		</div>
+	<% end %>
+</div>
+<div class="film-box">
+	<h3>邦画</h3>
+		<% japan_movies.each do |movie| %>
+			<div class="film-group film clearfix" id="japan">
+				<%= link_to movie_chats_path(movie.id), class: "film-link" do %>
+					<%= render partial: 'movies/photo', locals: { movie: movie } %>
+				<% end %>
+				<%= link_to movie_chats_path(movie.id), class: "hover-link" do %>
+					<div class="hover-image">
+						<i class="fa fa-comments fa-5x" aria-hidden="true"></i>
+					</div>
+				<% end %>
+				<div class="film-content">
+					<h4><%= movie.title %></h4>
+					<%= link_to movie_path(movie.id), class: "btn btn-default" do %>
+						映画の詳細
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+</div>

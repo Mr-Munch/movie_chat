@@ -4,7 +4,7 @@
 
 #slick {
 	width: 70%;
-	margin: 0 auto;
+	margin: 0 auto 50px auto;
 
 	.slide1 {
 		height:300px;
@@ -21,3 +21,126 @@
 		background-color: black;
 	}
 }
+
+.top-news {
+	a.site-link {
+		width: 30%;
+		margin-left: 30px;
+		float: left;
+
+		.news {
+			height: 300px;
+
+			.news-body {
+				width: 100%;
+				display: none;
+				color: white;
+				background-color:rgba(204,0,51,0.8);
+				text-align: center;
+				padding-top: 140px;
+				height: 300px;
+				border-radius: 3px;
+			}
+		}
+
+		#news1 {
+			background-image: url('image/movie3.jpg');
+			background-position: top;
+			background-size: cover;
+		}
+
+		#news2 {
+			background-image: url('image/icon.jpeg');
+			background-position: center;
+			background-size: cover;
+		}
+
+		#news3 {
+			background-image: url('image/link-image1.jpeg');
+			background-position: center;
+			background-size: cover;
+		}
+	}
+}
+
+.news-group {
+	a.site-link2 {
+		width: 30%;
+		margin-left: 25px;
+		float: left;
+
+		.news-small {
+			height: 200px;
+
+			.news-small-body {
+				width: 100%;
+				display: none;
+				color: white;
+				background-color:rgba(51,204,204,0.8);
+				text-align: center;
+				padding-top: 80px;
+				height: 200px;
+				border-radius: 3px;
+			}
+		}
+
+		#news4 {
+			background-image: url('image/movie4.jpg');
+			background-position: top;
+			background-size: cover;
+		}
+
+		#news5 {
+			background-image: url('image/movie3.jpg');
+			background-position: top;
+			background-size: cover;
+		}
+
+		#news6 {
+			background-image: url('image/movie5.jpg');
+			background-position: top;
+			background-size: cover;
+		}
+
+		#news7 {
+			background-image: url('image/icon.jpeg');
+			background-position: top;
+			background-size: cover;
+		}
+
+		#news8 {
+			background-image: url('image/movie6.jpg');
+			background-position: top;
+			background-size: cover;
+		}
+
+		#news9 {
+			background-image: url('image/movie2.jpg');
+			background-position: top;
+			background-size: cover;
+		}
+	}
+}
+
+.col-lg-4 {
+	a.site-link {
+		.theater {
+			width: 250px;
+			background-color: black;
+			border-radius: 5px;
+			padding: 10px;
+			margin: 30px auto 0 auto;
+
+			p {
+				margin: 0;
+				text-align: center;
+				color: white;
+
+				span {
+					color: red;
+				}
+			}
+		}
+	}
+}
+

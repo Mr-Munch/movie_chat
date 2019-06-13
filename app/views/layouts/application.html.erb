@@ -15,22 +15,22 @@
         <header class="header1">
           <h1>Movieee Chat</h1>
         </header>
-        <nav>
+        <nav id="common-nav">
             <ul>
               <%= link_to destroy_user_session_path, method: :delete do %>
                 <li>Logout</li>
               <% end %>
 
               <%= link_to movies_path do %>
-                <li>Movie</li>
+                <li>Chat</li>
               <% end %>
 
               <%= link_to user_path(current_user.id) do %>
                 <li>Mypage</li>
               <% end %>
 
-              <%= link_to tops_top_path do %>
-                <li>Top</li>
+              <%= link_to tops_news_path do %>
+                <li>News</li>
               <% end %>
             </ul>
           </nav>
@@ -41,7 +41,7 @@
       <main>
         <%= yield %>
       </main>
-      <footer></footer>
+      <footer>@Movee Chat</footer>
     </div>
   </body>
 </html>

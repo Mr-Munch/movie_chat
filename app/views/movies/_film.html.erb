@@ -1,0 +1,16 @@
+
+<%= link_to movie_chats_path(movie.id), class: "film-link" do %>
+	<%= render partial: 'movies/photo', locals: { movie: movie } %>
+<% end %>
+<%= link_to movie_chats_path(movie.id), class: "hover-link" do %>
+	<div class="hover-image">
+		<i class="fa fa-comments fa-5x" aria-hidden="true"></i>
+	</div>
+<% end %>
+<h4><%= movie.title %>
+	<span>
+		<%= link_to movie_path(movie.id), class: "btn btn-default" do %>
+			映画の詳細
+		<% end %>
+	</span>
+</h4>

@@ -1,43 +1,107 @@
-<div class="black-image">
+<div class="black-image2">
 	<div class="container">
         <div class="row">
           	<div class="col-lg-0"></div>
           	<div class="col-lg-12">
-				<h1>Movies</h1>
-				<p>公開中の映画はこちら！！</p>
-				<div class="panel-group" id="accordion">
-					<% @movies.each_with_index do |movie, i| %>
-						<div class="panel panel-default">
-							<div class="panel-heading">
-								<div class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordion" href="#accordionCollapse<%= i %>" class="clearfix">
-											<p class="title-link"><%= movie.title %></p>
-											<div>
-											<%= link_to movie_chats_path(movie.id), class: "btn btn-info" do %>
-												<i class="fa fa-comments" aria-hidden="true">コメント</i>
-											<% end %>
-											<%= link_to movie_path(movie.id), class: "btn btn-default" do %>
-												映画の詳細
-											<% end %>
-										</div>
-									</a>
-								</div>
-							</div>
-							<div id="accordionCollapse<%= i %>" class="panel-collapse collapse out">
-								<div class="panel-body">
-									<p>上映開始日 <%= movie.day %></p>
-									<%= link_to  do %>
-										<span class="btn btn-success small-botton"><%= movie.country %></span>
-									<% end %>
-									<%= link_to  do %>
-										<span class="btn btn-warning small-botton"><%= movie.category %></span>
-									<% end %>
-									<br><br>
-									<p>内容<br><%= movie.caption %></p>
-								</div>
-							</div>
+          		<h1>Movies</h1>
+          		<nav class="navbar navbar-default">
+					<div class="container-fluid margin-top">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample3">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
 						</div>
-					<% end %>
+						<div class="collapse navbar-collapse" id="navbarEexample3">
+							<ul class="nav navbar-nav">
+								<li id="all-botton" class="btn btn-info">all</li>
+								<li id="country-botton" class="btn btn-success">country</li>
+								<li id="category-botton" class="btn btn-warning">category</li>
+							</ul>
+							<%= form_tag(movies_path, method: :get, class: "navbar-form navbar-left") do %>
+			  					<%= text_field_tag :search, '', placeholder: "映画の題名", class: "form-control" %>
+			  					<%= submit_tag '検索', :title => nil, class: "btn btn-info", id: "search-botton" %>
+							<% end %>
+						</div>
+					</div>
+				</nav>
+				<p>＊タブの切り替えが上手くいかない場合、もう一度ブラウザを読み込んでみてください</p>
+
+          		<div class="all-movie" id="all">
+					<p>公開中の映画はこちら！！</p>
+					<div class="panel-group" id="accordion">
+						<% @search_movies.each_with_index do |movie, i| %>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion" href="#accordionCollapse<%= i %>" class="clearfix">
+												<p class="title-link"><%= movie.title %></p>
+												<div>
+												<%= link_to movie_chats_path(movie.id), class: "btn btn-info" do %>
+													<i class="fa fa-comments" aria-hidden="true">コメント</i>
+												<% end %>
+												<%= link_to movie_path(movie.id), class: "btn btn-default" do %>
+													映画の詳細
+												<% end %>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div id="accordionCollapse<%= i %>" class="panel-collapse collapse out">
+									<div class="panel-body">
+										<p>上映開始日 <%= movie.day %></p>
+										<%= link_to  do %>
+											<span class="btn btn-success small-botton"><%= movie.country %></span>
+										<% end %>
+										<%= link_to  do %>
+											<span class="btn btn-warning small-botton"><%= movie.category %></span>
+										<% end %>
+										<br><br>
+										<p>内容<br><%= movie.caption %></p>
+									</div>
+								</div>
+							</div>
+						<% end %>
+					</div>
+				</div>
+
+				<div class="country-movie clearfix" id="country">
+					<%= render partial: 'movies/country', locals: { foreign_movies: @foreign_movies, japan_movies: @japan_movies }  %>
+				</div>
+
+				<div class="category-movie" id="category">
+					<%= render partial: 'movies/category', locals: { action_movies: @action_movies, comedy_movies: @comedy_movies, mystery_movies: @mystery_movies, love_movies: @love_movies }  %>
+				</div>
+
+				<div class="ranking-box">
+					<h2>Chat参加数ランキング！</h2>
+					<table class="table ranking">
+						<thead>
+							<tr>
+								<th>順位</th>
+								<th>映画名</th>
+								<th>総コメント数</th>
+							</tr>
+						</thead>
+						<tbody>
+							<% @rank_movies.each_with_index do |movie, i| %>
+								<tr>
+									<% case i %>
+										<% when 0 then %>
+											<th>1位</th>
+										<% when 1 then %>
+											<th>2位</th>
+										<% when 2 then %>
+											<th>3位</th>
+									<% end %>
+									<td><%= movie.title %></td>
+									<td><%= movie.chats.count %>件</td>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>

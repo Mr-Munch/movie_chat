@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   	root :to => "devise/sessions#new"
   end
 
-  get 'tops/top'
+  get 'tops/news'
 
   resources :users, only: [:show, :update]
 

@@ -1,0 +1,33 @@
+<h2>category</h2>
+<div class="film-group clearfix" id="action">
+	<h3>アクション</h3>
+	<% action_movies.each do |movie| %>
+		<div class="film">
+			<%= render partial: 'movies/film', locals: { movie: movie } %>
+		</div>
+	<% end %>
+</div>
+<div class="film-group clearfix" id="comedy">
+	<h3>コメディ</h3>
+	<% comedy_movies.each do |movie| %>
+		<div class="film">
+			<%= render partial: 'movies/film', locals: { movie: movie } %>
+		</div>
+	<% end %>
+</div>
+<div class="film-group clearfix" id="mystery">
+	<h3>ミステリー</h3>
+	<% mystery_movies.each do |movie| %>
+		<div class="film">
+			<%= render partial: 'movies/film', locals: { movie: movie } %>
+		</div>
+	<% end %>
+</div>
+<div class="film-group clearfix" id="love">
+	<h3>恋愛</h3>
+	<% love_movies.each do |movie| %>
+		<div class="film">
+			<%= render partial: 'movies/film', locals: { movie: movie } %>
+		</div>
+	<% end %>
+</div>
