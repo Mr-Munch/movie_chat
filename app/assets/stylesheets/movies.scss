@@ -40,7 +40,7 @@ p.title-link {
 					li {
 						color: white;
 						margin-top: 5px;
-						margin-left: 60px;
+						margin-left: 15px;
 						padding: 10px 25px;
 					}
 				}
@@ -80,6 +80,7 @@ p.title-link {
 			float: left;
 
 			.film-group {
+				margin-top: 10px;
 
 				img {
 					width: 200px;
@@ -94,7 +95,7 @@ p.title-link {
 
 				.film-content {
 					float: left;
-					padding: 120px 0 0 40px;
+					padding: 120px 0 0 20px;
 				}
 			}
 		}
@@ -118,6 +119,10 @@ p.title-link {
 					p.authority {
 						display: none;
 					}
+				}
+
+				p {
+					padding-left: 60px;
 				}
 			}
 		}
@@ -149,7 +154,7 @@ p.title-link {
 	}
 
 	.ranking-box {
-		margin-top: 150px;
+		margin-top: 50px;
 
 		.ranking {
 			width: 70%;

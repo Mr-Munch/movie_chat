@@ -7,10 +7,9 @@
 		<i class="fa fa-comments fa-5x" aria-hidden="true"></i>
 	</div>
 <% end %>
-<h4><%= movie.title %>
-	<span>
-		<%= link_to movie_path(movie.id), class: "btn btn-default" do %>
-			映画の詳細
-		<% end %>
-	</span>
-</h4>
+<p><%= movie.title %></p>
+<p>
+	<%= link_to movie_path(movie.id), class: "btn btn-default" do %>
+		映画の詳細
+	<% end %>
+</p>

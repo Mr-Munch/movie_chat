@@ -10,6 +10,12 @@ class MoviesController < ApplicationController
   	@comedy_movies = Movie.where("category LIKE ?", "%コメディ%")
   	@mystery_movies = Movie.where("category LIKE ?", "%ミステリー%")
   	@love_movies = Movie.where("category LIKE ?", "%恋愛%")
+    @fantasy_movies = Movie.where("category LIKE ?", "%ファンタジー%")
+    @sf_movies = Movie.where("category LIKE ?", "%SF%")
+    @military_movies = Movie.where("category LIKE ?", "%ミリタリー%")
+    @anime_movies = Movie.where("category LIKE ?", "%アニメ%")
+    @spring_movies = Movie.where("category LIKE ?", "%青春%")
+
 
     @rank_movies = Movie.find(Chat.group(:movie_id).order('count(movie_id) desc').limit(3).pluck(:movie_id))
   end

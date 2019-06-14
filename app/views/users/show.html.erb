@@ -24,14 +24,17 @@
 								<p><span>お気に入り映画</span><br><%= @user.taste %></p>
 							</div>
 						</div>
-						<div class="profile-update">
-						<p>Image</p>
-						<%= f.attachment_field :image, placeholder: "プロフィール画像" %>
-						<p>Name</p>
-						<%= f.text_field :name, placeholder: " 名前", :style => "color: black;" %>
-						<p>Vest Movie</p>
-						<%= f.text_area :taste, placeholder: " 好きな映画を書こう", :style => "color: black;" %>
-						<%= f.submit "更新する", class: 'btn btn-danger btn-block' %>
+
+						<% if @user.id == current_user.id %>
+							<div class="profile-update">
+							<p>Image</p>
+							<%= f.attachment_field :image, placeholder: "プロフィール画像" %>
+							<p>Name</p>
+							<%= f.text_field :name, placeholder: " 名前", :style => "color: black;" %>
+							<p>Vest Movie</p>
+							<%= f.text_area :taste, placeholder: " 好きな映画を書こう", :style => "color: black;" %>
+							<%= f.submit "更新する", class: 'btn btn-danger btn-block' %>
+						<% end %>
 					<% end %>
 				</div>
 			</div>

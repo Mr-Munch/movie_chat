@@ -6,9 +6,13 @@
 			<div class="comment clearfix">
 				<div class="chat-user-image">
 					<% if chat.user.image_id.present? %>
-						<%= attachment_image_tag chat.user, :image, :size => '70x70' %>
+						<%= link_to user_path(chat.user_id) do %>
+							<%= attachment_image_tag chat.user, :image, :size => '70x70' %>
+						<% end %>
 					<% else %>
-						<%= image_tag "image/no-image.png", :size => '70x70' %>
+						<%= link_to user_path(chat.user_id) do %>
+							<%= image_tag "image/no-image.png", :size => '70x70' %>
+						<% end %>
 					<% end %>
 				</div>
 
@@ -26,9 +30,13 @@
 			<div class="other-comment clearfix">
 				<div class="chat-user-image">
 					<% if chat.user.image_id.present? %>
-						<%= attachment_image_tag chat.user, :image, :size => '70x70' %>
+						<%= link_to user_path(chat.user_id) do %>
+							<%= attachment_image_tag chat.user, :image, :size => '70x70' %>
+						<% end %>
 					<% else %>
-						<%= image_tag "image/no-image.png", :size => '70x70' %>
+						<%= link_to user_path(chat.user_id) do %>
+							<%= image_tag "image/no-image.png", :size => '70x70' %>
+						<% end %>
 					<% end %>
 				</div>
 

@@ -49,6 +49,12 @@
  	width: 100%;
  	height: 80px;
  	background-color: black;
+
+ 	a {
+ 		.sign-up-link, .sign-in-link {
+ 			margin: 20px 30px 10px 0;
+ 		}
+ 	}
  }
  header.header1 {
  	width: 100%;
@@ -75,8 +81,8 @@
  			color: white;
  			font-size: 20px;
  			line-height: 60px;
- 			padding: 0 30px;
- 			margin: 0 20px;
+ 			padding: 0 60px;
+ 			margin: 0 70px;
 
  			a {
  				color: white;
@@ -136,6 +142,7 @@
  		}
 
  		.field input {
+ 			color: black;
  			width: 250px;
  			height: 30px;
  			border-radius: 5px;
@@ -153,7 +160,7 @@
 	margin: 0;
 	background-color: black;
 	color: white;
-	height:1600px;
+	height:3500px;
 }
 
 .container {
@@ -168,4 +175,302 @@
  	padding: 30px 0;
  	position: absolute;
   	bottom: 0;
+  	color: white;
+  	text-align: center;
+ }
+
+
+
+ @media screen and (max-width:425px){
+
+ 	header, nav, main, footer {
+ 		width: 100%;
+ 	}
+
+ 	#common-nav {
+ 		ul {
+ 			li {
+ 				margin: 0 10px;
+ 				padding: 0 14px;
+ 			}
+ 		}
+ 	}
+
+ 	.top-color {
+ 		.sign {
+ 			width: 60%;
+ 		}
+		.root-image {
+			img {
+				display: none;
+			}
+		}
+	}
+
+ 	.navbar-default .navbar-collapse {
+ 		background: white;
+
+ 		#search-botton {
+ 			width: 200px;
+ 		}
+ 	}
+
+ 	#slick {
+		width: 80%;
+
+		.slide1, .slide2, .slide3 {
+			height:150px;
+		}
+	}
+
+	.top-news {
+		a.site-link {
+			margin-left: 10px;
+
+			.news {
+				height: 200px;
+
+				.news-body {
+					height: 200px;
+					padding-top: 60px;
+
+					p {
+						font-size: 10px;
+					}
+				}
+			}
+		}
+	}
+
+	.news-group {
+		height: 300px;
+
+		a.site-link2 {
+			margin-left: 10px;
+
+			.news-small {
+				height: 100px;
+
+				.news-small-body {
+					height: 100px;
+					padding-top: 15px;
+
+					p {
+						font-size: 10px;
+					}
+				}
+			}
+		}
+	}
+
+ 	.user-profile {
+ 		margin-top: 30px;
+
+ 		.user-image {
+ 			float: none;
+ 			margin-left: 50px;
+
+ 			h2 {
+ 				padding-right: 40px;
+ 			}
+
+ 			.user-taste {
+ 				margin-right: 50px;
+ 			}
+ 		}
+
+ 		.profile-update {
+ 			float: none;
+ 			margin-left: 30px;
+ 			margin-right: 30px;
+ 		}
+ 	}
+
+	.col-lg-12 {
+		.navbar {
+			.margin-top {
+				.navbar-collapse {
+					ul.navbar-nav{
+						li {
+							margin-left: 0;
+	 						margin-right: 20px;
+	 					}
+	 				}
+	 			}
+	 		}
+	 	}
+
+	 	.country-movie {
+	 		.film-box {
+	 			float: none;
+	 			margin-top: 60px;
+
+	 			.film {
+	 				a.film-link {
+	 					img {
+	 						margin-left: 5px;
+	 						width: 150px;
+	 						height: 150px;
+	 					}
+	 				}
+
+	 				a.hover-link {
+						top: 0;
+						left: 5px;
+
+						.hover-image {
+							width: 150px;
+							height: 150px;
+
+							i {
+								top:40px;
+								left:40px;
+							}
+						}
+					}
+
+	 				.film-content {
+	 					padding: 0 0 0 30px;
+	 				}
+	 			}
+	 		}
+	 	}
+
+	 	.category-movie {
+	 		.film-group {
+	 		 	.film {
+	 		 		a img {
+	 		 			width: 150px;
+	 		 			height: 150px;
+	 		 			margin-left: 10px;
+	 		 		}
+
+	 		 		a.hover-link {
+						top: 0;
+						left: 10px;
+
+						.hover-image {
+							width: 150px;
+							height: 150px;
+
+							i {
+								top:40px;
+								left:40px;
+							}
+						}
+					}
+
+	 		 		h4, p {
+	 		 			padding-left: 10px;
+	 		 		}
+	 		 	}
+	 		}
+	 	}
+	}
+
+	.show-image {
+		img {
+			width: 250px;
+			height: 250px;
+			margin-left: 70px;
+		}
+	}
+	.col-lg-8 {
+		.movie-content {
+			p {
+				font-size: 10px;
+			}
+		}
+	}
+
+
+	.movie-box {
+		margin: 10px 0;
+
+		.film-image {
+			width: 400px;
+
+			img {
+				width: 400px;
+				height: 300px;
+			}
+		}
+
+		.youtube {
+			width: 250px;
+			height: 200px;
+			top: 50px;
+			left: 75px;
+
+			iframe {
+				width: 250px;
+				height: 200px;
+			}
+		}
+	}
+
+	.col-lg-3 {
+		.panel {
+			.panel-heading {
+				h3 {
+				text-align: center;
+				}
+			}
+			.panel-body {
+				img {
+					margin-left: 60px;
+				}
+				p {
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	.col-lg-9 {
+		.chat-backimage {
+			.comments {
+				.other-comment {
+					padding-left: 45px;
+
+					.chat-user-image {
+						img {
+							width: 50px;
+							height: 50px;
+							margin: 0 10px 0 19px;
+						}
+					}
+
+					p.box {
+						font-size: 15px;
+					}
+					p.time {
+						font-size: 10px;
+						padding-left: 240px;
+					}
+				}
+
+				.comment {
+					padding-right: 60px;
+
+					.chat-user-image {
+						img {
+							width: 50px;
+							height: 50px;
+							margin: 0 10px 0 0;
+						}
+					}
+
+					p.box {
+						font-size: 15px;
+					}
+					p.time {
+						font-size: 10px;
+						padding-left: 160px;
+					}
+				}
+			}
+		}
+	}
+
  }

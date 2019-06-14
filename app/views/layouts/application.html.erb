@@ -4,7 +4,7 @@
     <title>MovieChat</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -36,12 +36,18 @@
           </nav>
       <% else %>
         <header class="header2">
+          <%= link_to new_user_registration_path do %>
+            <div class="btn btn-danger btn-lg sign-up-link pull-right">新規登録</div>
+          <% end %>
+          <%= link_to new_user_session_path do %>
+            <div class="btn btn-warning btn-lg sign-in-link pull-right">ログイン</div>
+          <% end %>
         </header>
       <% end %>
       <main>
         <%= yield %>
       </main>
-      <footer>@Movee Chat</footer>
+      <footer>@Moviee Chat</footer>
     </div>
   </body>
 </html>

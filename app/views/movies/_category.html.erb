@@ -31,3 +31,43 @@
 		</div>
 	<% end %>
 </div>
+<div class="film-group clearfix" id="fantasy">
+	<h3>ファンタジー</h3>
+	<% fantasy_movies.each do |movie| %>
+		<div class="film">
+			<%= render partial: 'movies/film', locals: { movie: movie } %>
+		</div>
+	<% end %>
+</div>
+<div class="film-group clearfix" id="sf">
+	<h3>SF</h3>
+	<% sf_movies.each do |movie| %>
+		<div class="film">
+			<%= render partial: 'movies/film', locals: { movie: movie } %>
+		</div>
+	<% end %>
+</div>
+<div class="film-group clearfix" id="military">
+	<h3>ミリタリー</h3>
+	<% military_movies.each do |movie| %>
+		<div class="film">
+			<%= render partial: 'movies/film', locals: { movie: movie } %>
+		</div>
+	<% end %>
+</div>
+<div class="film-group clearfix" id="anime">
+	<h3>アニメ</h3>
+	<% anime_movies.each do |movie| %>
+		<div class="film">
+			<%= render partial: 'movies/film', locals: { movie: movie } %>
+		</div>
+	<% end %>
+</div>
+<div class="film-group clearfix" id="spring">
+	<h3>青春</h3>
+	<% spring_movies.each do |movie| %>
+		<div class="film">
+			<%= render partial: 'movies/film', locals: { movie: movie } %>
+		</div>
+	<% end %>
+</div>

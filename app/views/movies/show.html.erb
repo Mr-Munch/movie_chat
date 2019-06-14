@@ -1,7 +1,7 @@
 <div class="black-image">
 	<div class="container">
 	    <div class="row">
-	       	<div class="col-lg-4">
+	       	<div class="col-lg-4 show-image">
 	       		<%= render partial: 'movies/photo', locals: { movie: @movie } %>
 	       	</div>
 	       	<div class="col-lg-8">
@@ -10,15 +10,14 @@
 	       			<p class="movie-caption"><%= @movie.caption %></p>
 	       			<p>上映開始日 <%= @movie.day %></p>
 					<p>国：
-						<%= link_to  do %>
-							<span class="btn btn-success"><%= @movie.country %></span>
-						<% end %>
+						<span class="btn btn-success"><%= @movie.country %></span>
 					</p>
 					<p>カテゴリー：
-						<%= link_to  do %>
-							<span class="btn btn-warning"><%= @movie.category %></span>
-						<% end %>
+						<span class="btn btn-warning"><%= @movie.category %></span>
 					</p>
+					<%= link_to movie_chats_path(@movie.id), class: "btn btn-info" do %>
+						<i class="fa fa-comments" aria-hidden="true">コメント</i>
+					<% end %>
 	       		</div>
 	       	</div>
 	    </div>

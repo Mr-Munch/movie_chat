@@ -3,7 +3,7 @@ class ChatsController < ApplicationController
 	before_action :set_movie
 
 	def index
-		@chats = Chat.where(movie_id: @movie.id).limit(5)
+		@chats = Chat.where(movie_id: @movie.id).limit(10)
 		@chat = Chat.new
 	end
 
